@@ -1,46 +1,38 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
-        <title>
-            User-SignUP
-        </title>
-    </head>
-    <body>
-        <header>
-            <h1>SignUP</h1>
-        </header>
-        <form method="POST">
+{% extends "base.html" %}
+{% block content %}
+    <header>
+        <h1>SignUP</h1>
+    </header>
+    <form method="POST">
 
-            <div class="signup-input">Username: 
-                <input type="text" name="username" {% if username %}value={{ username }}{% endif %}>
-                {% if username_error %} <!-- means using python -->
-                <label class="error">{{ username_error }}</label> <!-- means placeholder for variable -->
-                {% endif %}
-            </div>
+        <div class="signup-input">Username: 
+            <input type="text" name="username" {% if username %}value={{ username }}{% endif %}>
+            {% if username_error %} <!-- means using python -->
+            <label class="error">{{ username_error }}</label> <!-- means placeholder for variable -->
+            {% endif %}
+        </div>
 
-            <div class="signup-input">Password: 
-                <input type="text" name="password">
-                {% if password_error %}
-                <label class="error">{{ password_error }}</label>
-                {% endif %}
-            </div>
+        <div class="signup-input">Password: 
+            <input type="password" name="password">
+            {% if password_error %}
+            <label class="error">{{ password_error }}</label>
+            {% endif %}
+        </div>
 
-            <div class="signup-input">Verify Password: 
-                <input type="text" name="verify_password">
-                {% if verify_password_error %}
-                <label class="error">{{ verify_password_error }}</label>
-                {% endif %}
-            </div>
+        <div class="signup-input">Verify Password: 
+            <input type="password" name="verify_password">
+            {% if verify_password_error %}
+            <label class="error">{{ verify_password_error }}</label>
+            {% endif %}
+        </div>
 
-            <div class="signup-input">Email (optional): 
-                <input type="text" name="email" {% if email %}value={{ email }}{% endif %}>
-                {% if email_error %}
-                <label class="error">{{ email_error }}</label>
-                {% endif %}
-            </div>
+        <div class="signup-input">Email (optional): 
+            <input type="text" name="email" {% if email %}value={{ email }}{% endif %}>
+            {% if email_error %}
+            <label class="error">{{ email_error }}</label>
+            {% endif %}
+        </div>
 
-            <input type="submit" value="Submit">
-        </form>
-    </body>
-</html>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
