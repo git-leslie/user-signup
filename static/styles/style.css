@@ -2,9 +2,10 @@ html {
     font-family: sans-serif;
 }
 
-.error { color: red; }
-
-.signup-input {
-    margin: 5px 0px;
+.error { 
+    color: red; 
 }
 
+div {
+    margin: 15px 0px;
+}

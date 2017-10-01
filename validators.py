@@ -3,7 +3,7 @@ def general_validator(text):
     error = 0
 
     if text == "":
-        error = 'You forgot to put your username'
+        error = 'You forgot to put your information'
     elif len(text) < 3 or len(text) > 20:
         error = 'Must be between 3-20 characters'
     elif " " in text:
